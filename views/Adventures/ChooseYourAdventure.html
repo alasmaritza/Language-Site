@@ -1,0 +1,190 @@
+<div class="page-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Choose Your Travel Style</h2>
+            </div>
+            <div class="col-sm-6 text-right">
+                <ol class="breadcrumb">
+                    <li><a ui-sref="home">Home</a></li>
+                    <li>Travel Style</li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-2"></div>
+<div class="space70"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 margin-btm-40">
+            <div class="row">
+                <div ng-show="true" ng-mouseenter="quiz.overlay($event)" ng-mouseleave="quiz.removeOverlay()" class="col-sm-6 margin-btm-30 language">
+                    <div>
+                        <img src="/content/assanTheme/images/region-spain.jpg" class="img-responsive spanimg langimg" alt="">
+                    </div>
+                    <ul ng-click="quiz.showSpanishModal()" class="activities actSpan hidden">
+                        <li style="color:white">Travel to a</li>
+                        <li class="languageName" style="color:white">Spanish </li>
+                        <li style="color:white">Speaking country</li>
+                    </ul>
+                    <div class="space20"></div>
+                    <h1>Espa&ntilde;ol</h1>
+                    <span>Spanish</span>
+                    <p>
+                        Learn situation appropriate phrases for your travels. Pellentesque eu bibendum massa. Morbi et metus adipiscing libero lobortis
+                        accumsan ac eget turpis. Duis vehicula, velit sit amet vehicula gravida, nibh dui cursus risus, eget
+                        tristique tortor dolor id ligula. Integer id iaculis ante.
+                    </p>
+                </div>
+                <div ng-mouseenter="quiz.overlay($event)" ng-mouseleave="quiz.removeOverlay()" class="col-sm-6 margin-btm-30 language">
+                    <img src="/content/assanTheme/images/arc_de_triomphe.jpg" class="img-responsive frenimg langimg" alt="">
+                    <ul ng-click="quiz.showFrenchModal()" class="activities actFren hidden">
+                        <li style="color:white">Travel to a</li>
+                        <li class="languageName" style="color:white">French</li>
+                        <li style="color:white">Speaking country</li>
+                    </ul>
+                    <div class="space20"></div>
+                    <h1>Fran&ccedil;ais</h1>
+                    <span>French</span>
+                    <p>
+                        Learn situation appropriate phrases for your travels. Pellentesque eu bibendum massa. Morbi et metus adipiscing libero lobortis
+                        accumsan ac eget turpis. Duis vehicula, velit sit amet vehicula gravida, nibh dui cursus risus, eget
+                        tristique tortor dolor id ligula. Integer id iaculis ante.
+                    </p>
+                </div>
+            </div>
+            <!--for ui.router-->
+            <div class="container">
+                <div ui-view>
+                </div>
+            </div>
+            <div class="row">
+                <div ng-mouseenter="quiz.overlay($event)" ng-mouseleave="quiz.removeOverlay()" class="col-sm-6 margin-btm-30 language">
+                    <img src="/content/assanTheme/images/Daigoji-Temple-Japan.jpg" class="img-responsive japimg langimg" alt="">
+                    <ul ng-click="quiz.showModal()" class="activities actJap hidden">
+                        <li style="color:white">Travel to a</li>
+                        <li class="languageName" style="color:white">Japanese </li>
+                        <li style="color:white">Speaking country</li>
+                    </ul>
+                    <div class="space20"></div>
+                    <h1>日本語</h1>
+                    <span>Japanese</span>
+                    <p>
+                        Learn situation appropriate phrases for your travels. Morbi et metus adipiscing libero lobortis accumsan ac eget turpis.
+                        Duis vehicula, velit sit amet vehicula gravida, nibh dui cursus risus, eget tristique tortor dolor
+                        id ligula. Integer id iaculis ante.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer start-->
+<!--<div ng-controller="modalController as modal">-->
+<script type="text/ng-template" id="japaneseQuiz">
+    <div class="modal-header">
+        <span class="glyphicon glyphicon-remove" style="float: right; opacity: 0.3" ng-click="quiz.close()"></span>
+        <h3 class="modal-title">Choose Your Adventure Questionnaire</h3>
+    </div>
+    <div class="modal-body">
+        <p>Choose one from each of the following.</p>
+        <div ng-repeat="question in quiz.quizzes" ng-show="question.id==888">
+            <h4>{{question.question}}</h4>
+            <div>
+                <button ui-sref="chooseYourAdventure.japanese" class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[0].answer}}</button>
+            </div>
+            <div>
+                <button ui-sref="chooseYourAdventure.japanese" class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[1].answer}}</button>
+            </div>
+            <div>
+                <button ui-sref="chooseYourAdventure.japanese" class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[2].answer}}</button>
+            </div>
+        </div>
+        <div ng-repeat="question in quiz.quizzes" ng-show="question.id==889">
+            <br>
+            <h4>{{question.question}}</h4>
+            <div>
+                <button class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[0].answer}}</button>
+            </div>
+            <div>
+                <button class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[1].answer}}</button>
+            </div>
+            <div>
+                <button class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[2].answer}}</button>
+            </div>
+        </div>
+    </div>
+</script>
+<!--</div>-->
+<script type="text/ng-template" id="frenchQuiz">
+    <div class="modal-header">
+        <span class="glyphicon glyphicon-remove" style="float: right; opacity: 0.3" ng-click="quiz.close()"></span>
+        <h3 class="modal-title">Choose Your Adventure Questionnaire</h3>
+    </div>
+    <div class="modal-body">
+        <p>Choose one from each of the following.</p>
+        <div ng-repeat="question in quiz.quizzes" ng-show="question.id==887">
+            <h4>{{question.question}}</h4>
+            <div>
+                <button ui-sref="chooseYourAdventure.french" class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[0].answer}}</button>
+            </div>
+            <div>
+                <button ui-sref="chooseYourAdventure.french" class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[1].answer}}</button>
+            </div>
+            <div>
+                <button ui-sref="chooseYourAdventure.french" class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[2].answer}}</button>
+            </div>
+        </div>
+        <div ng-repeat="question in quiz.quizzes" ng-show="question.id==890">
+            <br>
+            <h4>{{question.question}}</h4>
+            <div>
+                <button class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[0].answer}}</button>
+            </div>
+            <div>
+                <button class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[1].answer}}</button>
+            </div>
+            <div>
+                <button class='btn button' ng-click="quiz.quizRedirect($event)">{{question.answers[2].answer}}</button>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="spanishQuiz">
+<div class="myModal">
+    <div class="modal-header">
+        <span class="glyphicon glyphicon-remove" style="float: right; opacity: 0.3" ng-click="quiz.close()"></span>
+        <h3 class="modal-title">Choose Your Adventure Questionnaire</h3>
+    </div>
+    <div class="modal-body">
+        <p>Choose one from each of the following.</p>
+        <div ng-repeat="question in quiz.quizzes" ng-show="question.id==884">
+            <h4>{{question.question}}</h4>
+            <div>
+                <button ui-sref="chooseYourAdventure.spanish" class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[0].answer}}</button>
+            </div>
+            <div>
+                <button ui-sref="chooseYourAdventure.spanish" class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[1].answer}}</button>
+            </div>
+            <div>
+                <button ui-sref="chooseYourAdventure.spanish" class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[2].answer}}</button>
+            </div>
+        </div>
+        <div ng-repeat="question in quiz.quizzes" ng-show="question.id==891">
+            <br>
+            <h4>{{question.question}}</h4>
+            <div>
+                <button class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[0].answer}}</button>
+            </div>
+            <div>
+                <button class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[1].answer}}</button>
+            </div>
+            <div>
+                <button class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[2].answer}}</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </scrip>

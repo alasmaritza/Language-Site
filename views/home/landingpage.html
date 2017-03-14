@@ -1,0 +1,178 @@
+<!--end call to action-->
+<!--start of my angular carousel-->
+<style>
+    p {
+        color: white;
+        font-size: 20px;
+    }
+    
+    .carousel-caption {
+        text-align: left;
+        top: 20%;
+        padding-bottom: 30px;
+        font-size: 200px;
+    }
+    
+    .carousel-caption p {
+        font-size: 70px;
+    }
+    
+    .blue-boxe {
+        background: #173A4A;
+    }
+</style>
+<div>
+
+    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+            <img ng-src="{{slide.image}}">
+            <div class="carousel-caption">
+                <p>{{slide.text}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--end of my angular carousel-->
+
+
+<div class="space70"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-6 margin-btm-30">
+            <div class="blue-boxe">
+                <i class="fa fa-graduation-cap"></i>
+                 <a ui-sref="FrenchSingleCourse"><h3>We Offer 3 Languages</h3></a>
+                <p>
+                    <ul>
+                        
+                            <li><h3>Spanish</h3></li>
+                        
+                        
+                            <li><h3> French</h3></li>
+                        
+                        
+                            <li><h3>Japanese</h3></li>
+                        
+                </p>
+
+            </div>
+            <!--Blue Boxes-->
+        </div>
+        <!--Col-->
+        <div class="col-md-3 col-sm-6 margin-btm-30">
+            <div class="blue-boxe">
+                <i class="fa fa-users"></i>
+                <a ui-sref="chooseYourAdventure"><h3>Choose Your Travel Adventure</h3></a>
+                <p>
+                    Whether you love rockclimbing or want to relax on the beach, we offer tailored language vocabulary to fit your travel lifestyle.
+                    <ul>
+
+                </p>
+
+            </div>
+            <!--Blue Boxes-->
+        </div>
+        <!--Col-->
+        <div class="col-md-3 col-sm-6 margin-btm-30">
+            <div class="blue-boxe">
+                <i class="fa fa-book"></i>
+
+                <a ui-sref="courseDashboard">
+                    <h3>Courses</h3>
+                </a>
+                <p>
+
+                    Our users are global learners. We tailor our courses to fit their worldly needs. From vocabulary and grammer to landmarks,
+                    customs, and proper pronounciation, we offer something for everyone.
+                </p>
+
+            </div>
+            <!--Blue Boxes-->
+        </div>
+        <!--Col-->
+        <div class="col-md-3 col-sm-6 margin-btm-30">
+            <div class="blue-boxe">
+                <i class="fa fa-plane"></i>
+                 <a ui-sref="chooseYourAdventure"><h3>User Blogs</h3></a>
+                <p>
+
+                    Find out where other users have been!
+                </p>
+                
+                    <ul>
+                        <li><h3> Read about speaksy adventures and share your travel experiences </h3></li>
+                
+
+            </div>
+            <!--Blue Boxes-->
+        </div>
+        <!--Col-->
+    </div>
+    <!--row-->
+</div>
+<!--container-->
+
+
+
+
+
+</div>
+<!--courses slider container end-->
+<div class="space70"></div>
+<div class="pattern-bg">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 margin-btm-30">
+                <h3 class="text-uppercase left-title margin-btm-40">Upcoming Events</h3>
+                <ul class="list-unstyled event-box">
+                    <li class=" clearfix">
+                        <div class="date">
+                            25<br>June
+                        </div>
+                        <div class="event-content">
+                            <h4><a href="#">Online class orientation</a></h4>
+                            <p><i class="fa fa-clock-o"></i> 11:00 Am - 3:00 am</p>
+
+                        </div>
+                    </li>
+                    <!--li-->
+                    <li class=" clearfix">
+                        <div class="date">
+                            25<br>June
+                        </div>
+                        <div class="event-content">
+                            <h4><a href="#">Travel Resources</a></h4>
+                            <p><i class="fa fa-clock-o"></i> 11:00 Am - 3:00 am</p>
+                            <p><i class="fa fa-map-marker"></i> Seminar Campus</p>
+
+                        </div>
+                    </li>
+                    <!--li-->
+
+                </ul>
+                <!--ul-->
+            </div>
+            <!--col-->
+            <div class="col-md-6 margin-btm-30">
+                <h3 class="text-uppercase  left-title margin-btm-40">Video Sample: Beginning Japanese</h3>
+
+                <!-- 16:9 aspect ratio -->
+
+
+
+
+
+                <div <img ng-src="{{slide.video}}">
+                    <iframe width="480" height="400" src="https://www.youtube.com/embed/rGrBHiuPlT0" frameborder="0" allowfullscreen></iframe>
+
+
+
+                </div>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9">
+
+
+            </div>

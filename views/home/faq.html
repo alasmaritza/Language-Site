@@ -1,0 +1,61 @@
+
+
+    <!--/nav end -->
+    <div class="page-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2 id="topFaq">Frequently Asked Questions</h2>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ol class="breadcrumb">
+                        <li><a ui-sref="home">Home</a></li>
+                        <li>F.A.Q</li>
+                       
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space70"></div>
+    <div class="container">
+        <div class="row events-row">
+            <div class="col-md-9 margin-btm-30 holder">
+                <h2>If you have more questions, Feel free to contact us.</h2>
+                <div>
+                    <div>
+                        <uib-accordion>
+                            <div uib-accordion-group class="panel-default" ng-repeat="faq in displayFaq.faqs" ng-show="faq.id>=119" is-open="status.open">
+                                <uib-accordion-heading>
+                                    {{faq.question}}
+                                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                                </uib-accordion-heading>
+                                {{faq.answer}}
+                            </div>
+                        </uib-accordion>
+                    </div>
+                </div>
+                <div class="col-md-3 margin-btm-40">
+                    <div class="sidebar-widget">
+                        <h3></h3>
+                        
+                    </div>
+                    <!--sidebar widget end-->
+                  
+                       
+                  
+                       
+                        <!--event end-->
+                    </div>
+                    <!--sidebar widget end-->
+                    <div class="sidebar-widget">
+                       
+                    </div>
+                    <!--sidebar widget end-->
+                </div>
+            </div>
+        </div>
+        <!--footer start-->
+  
+        <!--footer end-->
+ 

@@ -1,0 +1,98 @@
+    <div class="page-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Connect With Other Users</h2>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ol class="breadcrumb">
+                        <li><a ui-sref="home">Home</a></li>
+                        <li>Connect</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space70"></div>
+    <div class="container">
+        <h4 style="text-align: center"><strong>Find SpeakEasy Users Near You</strong></h4>
+        <div class="col-md-3 names" ng-repeat="person in profile.user | orderBy: '-lastName':!reverse">
+            <div class="user"><span><strong>{{person.firstName}} {{person.lastName}}</strong></span></div>
+            <div class="location"><span>{{person.city}}, {{person.stateProvinceCode}}</span> </div>
+            <!--<img class="avatar" src="https://sabio-training.s3-us-west-2.amazonaws.com/C22/{{person.fileKey}}"/>-->
+        </div>
+       <br>
+        <!--maps starts here-->
+        <div data-ng-show="profile.geocodeResponse">
+            <h3>Response from Google</h3>
+            <pre>
+                        {{profile.geocodeResponse}}
+                        </pre>
+        </div>
+         <div class="space50"></div>
+        <div class="col-md-9">
+            <br>
+            <div id="map-canvas"></div>
+        </div>
+        <div class="row events-row">
+            <div class="col-md-9 margin-btm-40">
+                <div class="side-event clearfix">
+                    <div class="space50"></div>
+                    <h4><strong>Upcoming Events</strong></h4>
+                    <p>Come meet other SpeakEasy users and travelers at one of our upcoming meetups.</p>
+                    <div class="space10"></div>
+                    <div class="s-event-date">
+                        <span>April 16</span> 2017
+                    </div>
+                    <div class="s-event-content">
+                        <h5>
+                            Japanese Travelers Meetup
+                        </h5>
+                        <p><i class="fa fa-clock-o"></i> <strong>9:AM - 1:PM</strong></p>
+                        <p><i class="fa fa-map-marker"></i> <strong>Philadelphia, Pennsylvania</strong></p>
+                        <p>
+                            Donec commodo felis nec eros mollis dignissim. Pellentesque scelerisque...
+                        </p>
+                    </div>
+                </div>
+                <!--event col end-->
+                <hr>
+                <div class="side-event clearfix">
+                    <div class="s-event-date">
+                        <span>May 18</span> 2017
+                    </div>
+                    <div class="s-event-content">
+                        <h5>
+                            French Travelers Meetup
+                        </h5>
+                        <p><i class="fa fa-clock-o"></i> <strong>6:PM - 9:PM</strong></p>
+                        <p><i class="fa fa-map-marker"></i> <strong>New York City, NY</strong></p>
+                        <p>
+                            Donec commodo felis nec eros mollis dignissim. Pellentesque scelerisque...
+                        </p>
+                    </div>
+                </div>
+                <!--event col end-->
+                <hr>
+                <div class="side-event clearfix">
+                    <div class="s-event-date">
+                        <span>June 22</span> 2017
+                    </div>
+                    <div class="s-event-content">
+                        <h5>
+                            Spanish Travelers Meetup
+                        </h5>
+                        <p><i class="fa fa-clock-o"></i> <strong>11:AM - 4:PM</strong></p>
+                        <p><i class="fa fa-map-marker"></i> <strong>San Diego, CA</strong></p>
+                        <p>
+                            Donec commodo felis nec eros mollis dignissim. Pellentesque scelerisque...
+                        </p>
+                    </div>
+                </div>
+                <!--event col end-->
+                <hr>
+            </div>
+        </div>
+    </div>
+   
+ 
