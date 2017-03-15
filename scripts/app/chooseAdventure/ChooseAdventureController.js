@@ -14,22 +14,12 @@
         vm.populateDiv = populateDiv;
         vm.quizRedirect = quizRedirect;
         vm.clickMe = clickMe;
-        vm.overlay = overlay;
         vm.showModal = showModal;
         vm.showFrenchModal = showFrenchModal;
         vm.showSpanishModal = showSpanishModal;
-        vm.removeOverlay = removeOverlay;
         vm.close = close;
         var ans = [];
         var answer = [];
-
-        function overlay() {
-            $(".activities").removeClass("hidden");
-        }
-
-        function removeOverlay() {
-            $(".activities").addClass("hidden");
-        }
 
         function close() {
             $('.fade').trigger('click');

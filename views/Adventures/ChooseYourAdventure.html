@@ -14,17 +14,17 @@
         </div>
     </div>
 </div>
-<div class="col-sm-2"></div>
 <div class="space70"></div>
-<div class="container">
+<div class="col-sm-2"></div>
+<div class="container">    
     <div class="row">
         <div class="col-md-10 margin-btm-40">
             <div class="row">
-                <div ng-show="true" ng-mouseenter="quiz.overlay($event)" ng-mouseleave="quiz.removeOverlay()" class="col-sm-6 margin-btm-30 language">
+                <div ng-show="true" class="col-sm-6 margin-btm-30 language">
                     <div>
                         <img src="/content/assanTheme/images/region-spain.jpg" class="img-responsive spanimg langimg" alt="">
                     </div>
-                    <ul ng-click="quiz.showSpanishModal()" class="activities actSpan hidden">
+                    <ul ng-click="quiz.showSpanishModal()" class="activities actSpan hidden language">
                         <li style="color:white">Travel to a</li>
                         <li class="languageName" style="color:white">Spanish </li>
                         <li style="color:white">Speaking country</li>
@@ -38,9 +38,9 @@
                         tristique tortor dolor id ligula. Integer id iaculis ante.
                     </p>
                 </div>
-                <div ng-mouseenter="quiz.overlay($event)" ng-mouseleave="quiz.removeOverlay()" class="col-sm-6 margin-btm-30 language">
+                <div class="col-sm-6 margin-btm-30 language">
                     <img src="/content/assanTheme/images/arc_de_triomphe.jpg" class="img-responsive frenimg langimg" alt="">
-                    <ul ng-click="quiz.showFrenchModal()" class="activities actFren hidden">
+                    <ul ng-click="quiz.showFrenchModal()" class="activities actFren hidden language">
                         <li style="color:white">Travel to a</li>
                         <li class="languageName" style="color:white">French</li>
                         <li style="color:white">Speaking country</li>
@@ -61,9 +61,9 @@
                 </div>
             </div>
             <div class="row">
-                <div ng-mouseenter="quiz.overlay($event)" ng-mouseleave="quiz.removeOverlay()" class="col-sm-6 margin-btm-30 language">
+                <div class="col-sm-6 margin-btm-30 language">
                     <img src="/content/assanTheme/images/Daigoji-Temple-Japan.jpg" class="img-responsive japimg langimg" alt="">
-                    <ul ng-click="quiz.showModal()" class="activities actJap hidden">
+                    <ul ng-click="quiz.showModal()" class="activities actJap hidden language">
                         <li style="color:white">Travel to a</li>
                         <li class="languageName" style="color:white">Japanese </li>
                         <li style="color:white">Speaking country</li>
@@ -81,8 +81,7 @@
         </div>
     </div>
 </div>
-<!--footer start-->
-<!--<div ng-controller="modalController as modal">-->
+
 <script type="text/ng-template" id="japaneseQuiz">
     <div class="modal-header">
         <span class="glyphicon glyphicon-remove" style="float: right; opacity: 0.3" ng-click="quiz.close()"></span>
@@ -187,4 +186,22 @@
         </div>
     </div>
     </div>
-    </scrip>
+    </script>
+    <script type="text/javascript">
+    startUp = function () {
+            $(".language").on("mouseenter", showAdventures);
+            $(".language").on("mouseleave", hideAdventures);
+        }
+
+        showAdventures = function () {
+            language = this;
+            $(language).closest("div").find("ul").removeClass("hidden");
+
+        }
+
+        hideAdventures = function () {
+            $(".activities").addClass("hidden");
+        }
+
+        $(document).ready(startUp);
+    </script>

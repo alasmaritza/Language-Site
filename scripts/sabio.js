@@ -20,11 +20,11 @@ sabio.moduleOptions = {
 
 sabio.layout.startUp = function () {
 
-    console.debug("sabio.layout.startUp");
+    // console.debug("sabio.layout.startUp");
 
     //this does a null check on sabio.page.startUp
     if (sabio.page.startUp) {
-        console.debug("sabio.page.startUp");
+        // console.debug("sabio.page.startUp");
         sabio.page.startUp();
     }
 };

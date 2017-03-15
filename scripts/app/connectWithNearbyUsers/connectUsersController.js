@@ -14,7 +14,7 @@
         vm.geocodeResponse = null;
         vm.address = {};
         vm.user;
-        var personName;
+        var personName = "";
         var first;
         var markerBounds = new google.maps.LatLngBounds();
 
@@ -31,16 +31,15 @@
             for (var i = 0; i < vm.user.length; i++) {
                 var person = vm.user[i];
                 var addressString = person.city + " " + person.stateProvinceCode;
-                //  personName = person.firstName;
-                //  first = [];
-                //  first.push(personName)
+                personName += vm.user[i].firstName
                 codeAddress(addressString);
 
             }
-        }
+        //}
 
         function codeAddress(addressString) {
             console.log(addressString);
+            // personName;
             vm.geocoder.geocode({
                 'address': addressString
             }, _onCodeAddress);
@@ -54,14 +53,6 @@
                 var geometry = results[0].geometry;
                 var loc = geometry.location;
 
-                var first = [];
-                var names = ["Armando", "Chris", "Fred", "Wendy", "Dan", "Aaron", "Garry", "John", "Gregorio", "Jimmy", "Billy", "Diana"]
-                for (var i = 0; i < names.length; i++) {
-                    personName = names[i];
-
-                    first.push(personName)
-                }
-
                 var icon = {
                     scaledSize: new google.maps.Size(32, 32),
                     url: '/content/images/markerMap.png'
@@ -70,15 +61,15 @@
 
                     map: vm.map,
                     position: loc,
-                    icon: icon
-                    //title: first
+                    icon: icon,
+                    title: personName
                 });
 
 
 
 
                 var infowindow = new google.maps.InfoWindow({
-                    content: '<p>' + first + '</p>'
+                    content: '<p>' + personName + '</p>'
                 });
                 marker.addListener('click', function () {
                     infowindow.open(vm.map, marker);
@@ -98,7 +89,7 @@
                 }
             }
         }
-
+        }
     }
 
 })();
