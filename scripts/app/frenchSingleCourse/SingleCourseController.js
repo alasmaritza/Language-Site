@@ -16,6 +16,7 @@
         vm.results = results;
         vm.resetQuizzes = resetQuizzes;
         vm.showModal = showModal;
+        vm.close = close;
        // vm.close = close;
         var answerChoice = [];
         var myChoice = {};
@@ -30,14 +31,16 @@
 
         function showModal() {
             vm.optionModal = $modal.open({
-                template: '<div class="modal-header"><h3 class="modal-title">Leisure Vocabulary Quiz</h3></div><div class="modal-body"><div ng-repeat="question in french.quiz" ng-show="question.id==905"><h4>{{question.question}}</h4><div><button class="btn button btn-answer" ng-click="french.postAnswers($event)" value="1">{{question.answers[0].answer}}</button></div><div><button class="btn button btn-answer" ng-click="french.postAnswers($event)" value="2">{{question.answers[1].answer}}</button></div><div><button class="btn button btn-answer" ng-click="french.postAnswers($event)" value="3">{{question.answers[2].answer}}</button></div></div><br><div ng-repeat="question in french.quiz" ng-show="question.id==906"><h4>{{question.question}}</h4><div><button class="btn button btn-answer" ng-click="french.postAnswers2($event)" value="1">{{question.answers[0].answer}}</button></div><div><button class="btn button btn-answer" ng-click="french.postAnswers2($event)" value="2">{{question.answers[1].answer}}</button></div><div><button class="btn button btn-answer" ng-click="french.postAnswers2($event)" value="3">{{question.answers[2].answer}}</button></div><br><button class="btn btn-primary" ng-click="french.gradedQuiz()">Grade Quiz</button><br><br><button class="btn btn-danger" ng-click="french.resetQuizzes()">Retake Quiz</button><div><h2 class="ans3 hidden">Your Score Is: <span class="results ansC"></span></h2></div></div><div class="modal-footer"></div>',
+                template: '<div class="modal-header"><span class="glyphicon glyphicon-remove" style="float: right; opacity: 0.3" ng-click="french.close()"></span><h3 class="modal-title">Leisure Vocabulary Quiz</h3></div><div class="modal-body"><div ng-repeat="question in french.quiz" ng-show="question.id==905"><h4>{{question.question}}</h4><div><button class="btn button btn-answer" ng-click="french.postAnswers($event)" value="1">{{question.answers[0].answer}}</button></div><div><button class="btn button btn-answer" ng-click="french.postAnswers($event)" value="2">{{question.answers[1].answer}}</button></div><div><button class="btn button btn-answer" ng-click="french.postAnswers($event)" value="3">{{question.answers[2].answer}}</button></div></div><br><div ng-repeat="question in french.quiz" ng-show="question.id==906"><h4>{{question.question}}</h4><div><button class="btn button btn-answer" ng-click="french.postAnswers2($event)" value="1">{{question.answers[0].answer}}</button></div><div><button class="btn button btn-answer" ng-click="french.postAnswers2($event)" value="2">{{question.answers[1].answer}}</button></div><div><button class="btn button btn-answer" ng-click="french.postAnswers2($event)" value="3">{{question.answers[2].answer}}</button></div><br><button class="btn btn-primary" ng-click="french.gradedQuiz()">Grade Quiz</button><br><br><button class="btn btn-danger" ng-click="french.resetQuizzes()">Retake Quiz</button><div><h2 class="ans3 hidden">Your Score Is: <span class="results ansC"></span></h2></div></div><div class="modal-footer"></div>',
                 controller: 'courseController as french'
             })
         }
 
-        // function close () {
-        //     vm.closeModal = $modal.close();
-        // }
+        function close () {
+            $('.fade').trigger('click');
+        }
+
+
 
         function postAnswers(choice) {
             $(choice.toElement).toggleClass('btn-success');

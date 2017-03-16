@@ -9,14 +9,13 @@
                     <li><a ui-sref="home">Home</a></li>
                     <li>Travel Style</li>
                 </ol>
-
             </div>
         </div>
     </div>
 </div>
 <div class="space70"></div>
 <div class="col-sm-2"></div>
-<div class="container">    
+<div class="container">
     <div class="row">
         <div class="col-md-10 margin-btm-40">
             <div class="row">
@@ -81,7 +80,6 @@
         </div>
     </div>
 </div>
-
 <script type="text/ng-template" id="japaneseQuiz">
     <div class="modal-header">
         <span class="glyphicon glyphicon-remove" style="float: right; opacity: 0.3" ng-click="quiz.close()"></span>
@@ -152,56 +150,56 @@
     </div>
 </script>
 <script type="text/ng-template" id="spanishQuiz">
-<div class="myModal">
-    <div class="modal-header">
-        <span class="glyphicon glyphicon-remove" style="float: right; opacity: 0.3" ng-click="quiz.close()"></span>
-        <h3 class="modal-title">Choose Your Adventure Questionnaire</h3>
-    </div>
-    <div class="modal-body">
-        <p>Choose one from each of the following.</p>
-        <div ng-repeat="question in quiz.quizzes" ng-show="question.id==884">
-            <h4>{{question.question}}</h4>
-            <div>
-                <button ui-sref="chooseYourAdventure.spanish" class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[0].answer}}</button>
+    <div class="myModal">
+        <div class="modal-header">
+            <span class="glyphicon glyphicon-remove" style="float: right; opacity: 0.3" ng-click="quiz.close()"></span>
+            <h3 class="modal-title">Choose Your Adventure Questionnaire</h3>
+        </div>
+        <div class="modal-body">
+            <p>Choose one from each of the following.</p>
+            <div ng-repeat="question in quiz.quizzes" ng-show="question.id==884">
+                <h4>{{question.question}}</h4>
+                <div>
+                    <button ui-sref="chooseYourAdventure.spanish" class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[0].answer}}</button>
+                </div>
+                <div>
+                    <button ui-sref="chooseYourAdventure.spanish" class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[1].answer}}</button>
+                </div>
+                <div>
+                    <button ui-sref="chooseYourAdventure.spanish" class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[2].answer}}</button>
+                </div>
             </div>
-            <div>
-                <button ui-sref="chooseYourAdventure.spanish" class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[1].answer}}</button>
-            </div>
-            <div>
-                <button ui-sref="chooseYourAdventure.spanish" class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[2].answer}}</button>
+            <div ng-repeat="question in quiz.quizzes" ng-show="question.id==891">
+                <br>
+                <h4>{{question.question}}</h4>
+                <div>
+                    <button class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[0].answer}}</button>
+                </div>
+                <div>
+                    <button class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[1].answer}}</button>
+                </div>
+                <div>
+                    <button class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[2].answer}}</button>
+                </div>
             </div>
         </div>
-        <div ng-repeat="question in quiz.quizzes" ng-show="question.id==891">
-            <br>
-            <h4>{{question.question}}</h4>
-            <div>
-                <button class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[0].answer}}</button>
-            </div>
-            <div>
-                <button class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[1].answer}}</button>
-            </div>
-            <div>
-                <button class='btn button' ng-click="quiz.clickMe($event)">{{question.answers[2].answer}}</button>
-            </div>
-        </div>
     </div>
-    </div>
-    </script>
-    <script type="text/javascript">
+</script>
+<script type="text/javascript">
     startUp = function () {
-            $(".language").on("mouseenter", showAdventures);
-            $(".language").on("mouseleave", hideAdventures);
-        }
+        $(".language").on("mouseenter", showAdventures);
+        $(".language").on("mouseleave", hideAdventures);
+    }
 
-        showAdventures = function () {
-            language = this;
-            $(language).closest("div").find("ul").removeClass("hidden");
+    showAdventures = function () {
+        language = this;
+        $(language).closest("div").find("ul").removeClass("hidden");
 
-        }
+    }
 
-        hideAdventures = function () {
-            $(".activities").addClass("hidden");
-        }
+    hideAdventures = function () {
+        $(".activities").addClass("hidden");
+    }
 
-        $(document).ready(startUp);
-    </script>
+    $(document).ready(startUp);
+</script>

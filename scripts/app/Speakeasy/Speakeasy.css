@@ -149,7 +149,7 @@ li.nav-item.active {
     padding: 10px;
 }
 
-#my-awesome-dropzone {
+#my-awesome-dropzone, .glyphicon-remove {
     /*border: solid;*/
     cursor: pointer;
 }
