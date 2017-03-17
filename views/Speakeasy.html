@@ -8,6 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>SpeakEasy |</title>
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link href="/content/assanTheme/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/content/assanTheme/css/animate.css" rel="stylesheet">
     <link href="/content/assanTheme/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -20,8 +21,8 @@
     <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
     <link href="/scripts/app/Speakeasy/Speakeasy.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-<link rel="icon" type="image/png" href="/content/images/SpeakEasy-32x32.png" sizes="32x32">
-<!--<base href="/home">-->
+    <link rel="icon" type="image/png" href="/content/images/SpeakEasy-32x32.png" sizes="32x32">
+    <!--<base href="/home">-->
 </head>
 
 <body>
@@ -51,6 +52,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
+                <!--<a class="navbar-brand" href="index.html"><img src="/content/assanTheme/images/logo-light.png" alt=""></a>-->
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -65,7 +67,7 @@
                                 <a tabindex="-1" href="#">More</a>
                                 <ul class="dropdown-menu">
                                     <li><a tabindex="-1" ui-sref="UserProfile">User Profile</a></li>
-                                  <li><a ui-sref='MexicanCuisine'>Spanish Sample Course</a></li>
+                                    <li><a ui-sref='MexicanCuisine'>Spanish Sample Course</a></li>
                                 </ul>
                         </ul>
                         </li>
@@ -87,21 +89,16 @@
         <!--/.container -->
     </nav>
     <!--/nav end -->
-
     <!--Routing-->
     <div ui-view></div>
-
     <!--footer start-->
     <footer class="footer" id="footer">
-
         <div class="container">
             <div class="row">
-               
                 <div class="col-md-3 margin-btm-30">
-        
-                  <img src="/content/images/speakeasy1.png" alt="">
+                    <!--image of logo here maybe-->
+                    <img src="/content/images/speakeasy1.png" alt="">
                 </div>
-               
                 <div class="col-md-3 margin-btm-30" style="float:right">
                     <h3>Contact us</h3>
                     <ul class="list-inline footer-social">
@@ -115,7 +112,6 @@
                     <p>Questions: support@speakeasy.com</p>
                 </div>
             </div>
-
         </div>
         <div class="footer-bottom">
             <div class="container">
@@ -124,17 +120,20 @@
         </div>
     </footer>
     <!--footer end-->
-
-<!--Angular-->
+    <!--Angular-->
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCNda41mrqmOuxsyNDtc7I_B0jFaL-nZwA"></script>
-    <script src="/content/assanTheme/js/jquery.min.js"></script>
-    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/content/assanTheme/js/jquery.min.js"></script>   
     <script src="/content/assanTheme/js/bootstrap-hover-dropdown.min.js"></script>
     <script src="/scripts/angular.js"></script>
     <script src="/scripts/angular-ui-router.js"></script>
     <script src="/scripts/ui-bootstrap.min.js"></script>
     <script src="/scripts/ui-bootstrap-tpls.min.js"></script>
     <script src="/scripts/angular-animate.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script> 
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/dropzone.js"></script>
     <script src="/scripts/app/Speakeasy/SpeakeasyModule.js"></script>
     <script src="/scripts/app/Speakeasy/SpeakeasyConfig.js"></script>
     <script src="/scripts/app/Speakeasy/SpeakeasyRun.js"></script>
@@ -145,7 +144,7 @@
     <script src="/scripts/app/frenchSingleCourse/SingleCourseFactory.js"></script>
     <script src="/scripts/app/faq/faqsController.js" type="text/javascript"></script>
     <script src="/scripts/app/faq/faqsFactory.js" type="text/javascript"></script>
-     <script src="/scripts/app/landingPage/landingPageController.js"></script>
+    <script src="/scripts/app/landingPage/landingPageController.js"></script>
     <script src="/scripts/app/connectWithNearbyUsers/connectUsersController.js"></script>
     <script src="/scripts/app/connectWithNearbyUsers/connectUsersFactory.js"></script>
     <!-- jQuery -->
@@ -165,7 +164,6 @@
     <script type="text/javascript">
 
         sabio.page.UserId = sessionStorage.getItem("user");
-
     </script>
 </body>
 

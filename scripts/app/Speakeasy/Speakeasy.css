@@ -35,14 +35,12 @@
     list-style-type: none;
     color: white;
     font-size: 32px;
-    /*text-align: center;*/
     line-height: 2;
     position: absolute;
     top: 0;
     bottom: 182px;
     right: 15px;
     left: 15px;
-    /*background-color: rgba(17, 221, 167, 0.4);*/
     background-color: rgba(255, 20, 20, 0.4);
     cursor: pointer;
 }
@@ -59,6 +57,18 @@ a {
 .languageName {
     font-family: Calligraffitti;
     font-size: 40px;
+    opacity: 0.5;
+}
+
+.languageAnimate {
+    animation-name: grow;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes grow {
+    from {font-size: 40px; opacity: 0.5;}
+    to {font-size: 60px; opacity: 1.0;}
 }
 
 h1:first-child {
@@ -69,12 +79,16 @@ h1:first-child {
     margin: 5px;
 }
 
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
 
 /*singleCourse*/
 
 .course {
     text-align: center;
-    /*font-family: Poiret One;*/
 }
 
 .leisure {
@@ -86,7 +100,6 @@ h1:first-child {
 }
 
 .heading {
-    /*margin-left: 100px;*/
     text-align: center;
 }
 
@@ -103,6 +116,14 @@ h1:first-child {
     background-color: #CCC;
 }
 
+.btn1 {
+    color: #000000;
+    background-color: #17988E;
+}
+
+.btn1:not([disabled]):hover {
+    background-color:#17988E;
+}
 
 /*userProfile*/
 
@@ -150,6 +171,5 @@ li.nav-item.active {
 }
 
 #my-awesome-dropzone, .glyphicon-remove {
-    /*border: solid;*/
     cursor: pointer;
 }

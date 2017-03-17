@@ -33,44 +33,61 @@
                 lng: -74.2581906,
                 title: "New York, NY"
             }, {
-                lat: 40.0046684,
-                lng: -75.258117,
-                title: "Philadelphia, PA"
+                lat: 44.7078266,
+                lng: -119.2914274,
+                title: "Olympia, WA"
             }, {
                 lat: 32.8248175,
                 lng: -117.3753541,
                 title: "San Diego, CA"
+            }, {
+                lat: 40.0046684,
+                lng: -75.258117,
+                title: "Philadelphia, PA"
+            }, {
+                lat: 39.7539729,
+                lng: -104.9650084,
+                title: "Denver, CO"
             }];
 
+
+
+
+            for (var i = 0; i < location.length; i++) {
+                var loc = location[i];
+                var timeout = i * 200;
+                var title = location[i].title;
+                addTimeout(loc, timeout, title);
+            }
+        }
+
+        function addTimeout(loc, timeout, title) {
             var flag = {
                 scaledSize: new google.maps.Size(45, 45),
-                        url: '/content/images/Pink.ico'
+                url: '/content/images/Pink.ico'
             };
-        
+            window.setTimeout(function () {
+                var marker = new google.maps.Marker({
 
-        for (var i = 0; i < location.length; i++) {
-            var loc = location[i];
-            var title = location[i].title;
-
-            var marker = new google.maps.Marker({
-
-                map: vm.map,
-                position: loc,
-                icon: flag,
-                title: title
-            });
+                    map: vm.map,
+                    position: loc,
+                    icon: flag,
+                    title: title,
+                    animation: google.maps.Animation.DROP
+                });
+            }, timeout);
         }
 
-        }
+        // }
 
         function showUsers(user) {
             vm.user = user.data.items;
             for (var i = 0; i < vm.user.length; i++) {
                 var person = vm.user[i];
                 var addressString = person.city + " " + person.stateProvinceCode;
-               // personName += vm.user[i].firstName
+                var timeout = i * 200;
+                // personName += vm.user[i].firstName
                 codeAddress(addressString);
-
             }
             //}
 
@@ -99,7 +116,8 @@
                         map: vm.map,
                         position: loc,
                         icon: icon,
-                       // title: personName
+                        animation: google.maps.Animation.DROP
+                        // title: personName
                     });
 
                     var infowindow = new google.maps.InfoWindow({

@@ -54,12 +54,16 @@
                     </p>
                 </div>
             </div>
-            <!--for ui.router-->
+
+            <!--BEGIN ui.router-->
             <div class="container">
                 <div ui-view>
                 </div>
             </div>
+            <!--END ui.router-->
+
             <div class="row">
+                <div class="col-sm-3"></div>
                 <div class="col-sm-6 margin-btm-30 language">
                     <img src="/content/assanTheme/images/Daigoji-Temple-Japan.jpg" class="img-responsive japimg langimg" alt="">
                     <ul ng-click="quiz.showModal()" class="activities actJap hidden language">
@@ -114,7 +118,6 @@
         </div>
     </div>
 </script>
-<!--</div>-->
 <script type="text/ng-template" id="frenchQuiz">
     <div class="modal-header">
         <span class="glyphicon glyphicon-remove" style="float: right; opacity: 0.3" ng-click="quiz.close()"></span>
@@ -194,6 +197,7 @@
     showAdventures = function () {
         language = this;
         $(language).closest("div").find("ul").removeClass("hidden");
+        $(language).closest("div").find(".languageName").addClass("languageAnimate");
 
     }
 
